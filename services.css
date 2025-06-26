@@ -1,0 +1,324 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* .navbar {
+  align-items: flex-start;  
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
+  height: 60px; /* ✅ Updated height */
+  /* padding: 10px 40px;
+  background: linear-gradient(to right, #ffa500, #b22222);
+  z-index: 10;
+  position: relative;
+}
+
+.logo {
+  height: 220px;
+  margin-top: -3px;
+  margin-left: -100px;
+  position: relative;
+  z-index: 10;
+} */
+
+/* .menu { 
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.menu a {
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif; 
+  font-size: 20px;
+  font-weight: 400; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  padding: 0 20px;
+  box-sizing: border-box;
+} */
+
+.menu a:hover {
+  background-color: #ff6600;
+}
+.container {
+  padding: 10px 30px;
+}
+/* .container::after{
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+
+  .section {
+  margin-bottom: 300px; /* Increased spacing */
+}
+
+@media (max-width: 480px) {
+  .section {
+    margin-bottom: 100px; /* Reduced from 300px to 100px or any value you prefer */
+  }
+}
+
+.section h2 {
+  color: #ff6600; /* Teal heading for Services page */
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.section-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: 110px;
+  width: 80%;
+}
+
+.card {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+}
+
+.side-img {
+  flex: 1;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* .orange-card {
+  background-color: #ffa726;
+} */
+
+.red-card {
+  background: linear-gradient(to right, #ff6f61, #e91e63);
+}
+
+.testimonial-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: flex-start;
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: auto;
+  max-height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Aladdin Application Section */
+.app-showcase {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.app-text {
+  flex: 1;
+  background-color: #ff7a39;
+  padding: 25px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-text ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.app-text li {
+  list-style: disc;
+  margin-bottom: 6px;
+}
+
+.device-images {
+  flex: 1;
+  position: relative;
+  height: 320px;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+.device {
+  position: absolute;
+  object-fit: contain;
+  height: auto;
+  max-height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.device.mobile {
+  left: 39px;
+  bottom: -40px;
+  z-index: 7;
+  border: 3px solid #000;
+  border-radius: 20px;
+  max-height: 250px; /* adjusted from 300px */
+}
+
+
+.device.tab {
+  left: 120px;
+  bottom: 70px;
+  z-index: 4;
+}
+
+.device.tv {
+  left: 250px;
+  bottom: -70px;
+  z-index: 7;
+  border-bottom: 15px solid #706d6d; /* bold dark grey bottom border */
+  border-radius: 6px; /* optional: for slight curve */
+}
+
+
+/* Responsive - Tablets */
+@media (max-width: 1024px) {
+  .section-row {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .card,
+  .side-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .side-img {
+    margin-top: 10px;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-card img {
+    margin: 0 auto;
+  }
+
+  .app-showcase {
+    flex-direction: column;
+  }
+
+  .device-images {
+    height: auto;
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .device {
+    position: relative;
+    max-height: 200px;
+  }
+
+  .device.mobile,
+  .device.tab,
+  .device.tv {
+    left: unset;
+    right: unset;
+    bottom: unset;
+    z-index: 1;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  /* .navbar {
+    padding: 15px;
+  } */
+/* 
+  .logo {
+    height: 100px;
+    margin-left: 0;
+  } */
+
+  /* .menu a {
+    font-size: 16px;
+    margin: 5px 10px;
+  } */
+
+  .section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .card {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .testimonial-card {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 10px 15px;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.5s ease-out;
+}
+
+.animate-slide-in.visible {
+  animation: slideInRight 0.8s ease-out forwards;
+}
