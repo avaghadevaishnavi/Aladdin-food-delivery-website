@@ -247,14 +247,23 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 200px 40px 1px; 
+    padding: 168px 40px 10px; 
     border-radius: 10px;
   }
  
+.hero-image {
+  width: 100vw; /* ensures full screen width */
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  left: 0;
+ 
+}
 
-
+ 
   .text-content {
     max-width: 100%;
+ 
    
   }
 
@@ -275,7 +284,7 @@ body {
     
   }
 }
-.auto-scroller {
+/* .auto-scroller {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -290,7 +299,7 @@ body {
   font-size: 20px;
   color: white;
   font-family: 'Outfit', sans-serif;
-}
+} */
 
 
 @keyframes scroll-left {
