@@ -21,17 +21,16 @@
   <!-- Navbar -->
  <header class="navbar">
   <img src="images/food aap logo.png" alt="Logo" class="logo" />
-
   <div class="hamburger" id="hamburger">
     <i class="fas fa-bars"></i>
   </div>
-
   <nav class="menu" id="menu">
     <a href="#home" class="active">Home</a>
     <a href="#services">Services</a>
     <a href="#follow">Follow Us</a>
   </nav>
 </header>
+
 
 <!-- Home Section -->
 <main  class="hero">
@@ -40,9 +39,9 @@
      <h1 id="heroText">Delivery to your doorstep<br>Just in ₹29!</h1>
 
   </div>
-  <div class="auto-scroller">
+  <!-- <div class="auto-scroller">
     <div id="startScroll"><i class="fa-sharp fa-solid fa-chevron-right"></i></div>
-  </div>
+  </div> -->
 
 
 
@@ -175,16 +174,33 @@
 <script>
 
 
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const menu = document.getElementById("menu");
-  const navbar = document.querySelector(".navbar");
 
   hamburger.addEventListener("click", () => {
     menu.classList.toggle("active");
-    navbar.classList.toggle("expanded"); // 👉 add or remove the class
+  });
+
+  // Delay closing menu to let background show
+  document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      setTimeout(() => {
+        menu.classList.remove("active");
+      }, 400); // Wait 400ms after click before hiding
+    });
   });
 });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const hamburger = document.getElementById("hamburger");
+//   const menu = document.getElementById("menu");
+
+//   hamburger.addEventListener("click", () => {
+//     menu.classList.toggle("active"); // ✅ Only toggle the menu
+//   });
+// });
 
 
 

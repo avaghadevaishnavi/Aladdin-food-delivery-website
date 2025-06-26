@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   background-color: black;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 
@@ -38,17 +40,18 @@ body {
 
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
   padding: 10px 40px;
   background: linear-gradient(to right, #ffa500, #b22222);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  overflow: visible; /* Important to allow logo overflow */
+  overflow: visible;
 }
+
 
 /* Logo outside sticky flow */
 /* .logo {
@@ -209,11 +212,11 @@ body {
 
 
 /* Auto Scroller */
-.auto-scroller {
+/* .auto-scroller {
   text-align: right;
   font-size: 25px;
   line-height: 1.2; 
-  /* margin-top: -10px;   */
+
   margin-right: -120px; 
    margin-left: -120px; 
   color: white;
@@ -223,7 +226,7 @@ body {
   font-size: 60px;
   position: relative;
     
-  /* font-weight:  */
+
   top: -15px;
    color: white;
   text-shadow: 0 0 1px white;
@@ -236,7 +239,7 @@ body {
   display: inline-block;
    color: white;
   margin-top: 10px;
-}
+} */
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -244,17 +247,21 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 70px 20px 20px; 
+    padding: 200px 40px 10px; 
+    border-radius: 20px;
   }
  
 
 
   .text-content {
     max-width: 100%;
+   
   }
 
   .text-content h1 {
     font-size: 1rem;
+     
+    margin-top: -100px;
   }
 
   .text-content h2 {
@@ -363,7 +370,7 @@ body {
   margin-top: -45px;
 }
 
-  .menu {
+  /* .menu {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -376,7 +383,7 @@ body {
     text-align: left;
     border-bottom: 1px solid #ccc;
     color: black;
-  }
+  } */
 }
 
 
@@ -389,11 +396,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar {
+   .navbar {
     position: relative;
     display: flex;
     flex-direction: row;
-     position: sticky; /* ✅ Correct */
+     position: sticky; 
     top: 0;   
     justify-content: space-between;
     align-items: center;
@@ -410,23 +417,51 @@ body {
     z-index: 1001;
   }
 
- .menu {
+ /* .menu {
     display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
     top: 60px;
     right: 10px;
-    /* background: white; */
+   
     width: 200px;
     padding: 10px 15px;
     z-index: 1000;
-  }
+  } */
+
+
+  /* .menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: #ffa500; 
+  border-radius: 10px;
+  width: 220px;
+  padding: 10px 15px;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
 
   .menu.active {
     display: flex;
   }
 
+  .menu a {
+  color: white; 
+  font-size: 16px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+} */
+
+/* 
   .menu a {
     color: white;
     text-decoration: none;
@@ -434,17 +469,56 @@ body {
     padding: 10px 0;
     width: 100%;
     
-  }
+  } */
 
-  .menu a:last-child {
+  /* .menu a:last-child {
     border-bottom: none;
-  }
+  } */
+
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  /* background: #ffa500; */
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu a {
+  color: white;
+    background: linear-gradient(to right, #ffa500, #b22222);
+  font-size: 16px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu a:last-child {
+  border-bottom: none;
+}
+
+
 .logo {
-  height: 140px;                 
-  transform: scale(1.8);          
-  transform-origin: left center;  
-  margin-left: -100px;             
-  margin-bottom: -60px;           
+  height: 140px;
+  width: 140px; /* 👈 Decrease width here */
+  object-fit: contain; /* 👈 Keeps the logo from stretching */
+  transform: scale(1.8);
+  transform-origin: left center;
+  margin-left: -100px;
+  margin-bottom: -60px;
   position: relative;
   z-index: 10;
   top: -15px;
@@ -461,3 +535,13 @@ body {
 }
 
 
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
